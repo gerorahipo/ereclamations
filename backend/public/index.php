@@ -103,15 +103,19 @@ try {
     }
 
     // ─── Administration (Paramétrage) ──────────────────────────
+    // Auth::require() ajouté en défense en profondeur (audit sécurité prod)
     if ($segments[0] === 'travailleurs' && $method === 'GET') {
+        App\Middleware\Auth::require();
         (new App\Controllers\ParametrageController())->travailleurs();
         return;
     }
     if ($segments[0] === 'employeurs' && $method === 'GET') {
+        App\Middleware\Auth::require();
         (new App\Controllers\ParametrageController())->employeurs();
         return;
     }
     if ($segments[0] === 'sinistres' && $method === 'GET') {
+        App\Middleware\Auth::require();
         (new App\Controllers\ParametrageController())->sinistres();
         return;
     }
