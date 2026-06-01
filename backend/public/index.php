@@ -34,7 +34,7 @@ spl_autoload_register(function (string $class): void {
 });
 
 // ─── Sécurité & CORS ────────────────────────────────────────
-$allowedOrigin = getenv('CORS_ORIGIN') ?: 'http://localhost:5173';
+$allowedOrigin = getenv('CORS_ORIGIN') ?: 'http://localhost:81';
 header("Access-Control-Allow-Origin: {$allowedOrigin}");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Active-Agency");
